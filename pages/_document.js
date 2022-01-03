@@ -4,6 +4,7 @@ export default function Document() {
     return (
         <Html>
             <Head>
+                <script data-ad-client="ca-pub-9042235887207452" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
                 <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet" />
