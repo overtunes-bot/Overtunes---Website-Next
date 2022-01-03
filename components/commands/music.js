@@ -2,7 +2,7 @@ export default function Music() {
     return (
         <section className="">
             <div className="p-2 flex flex-col gap-6 md:text-xl lg:text-2xl">
-                <details className="bg-[#172b55] rounded-lg p-3 text-gray-200">
+                <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
                     <summary className="">
                         -play
                     </summary>
