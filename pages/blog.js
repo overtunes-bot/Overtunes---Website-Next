@@ -15,7 +15,17 @@ export default function Blog() {
 
             <Navbar />
 
-            <h1 className='text-6xl text-gray-200 text-center m-10'>TODO</h1>
+            <section className='border-[#3C4652] border-2 p-8'>
+                <div className='border-[#3C4652] border-2 p-2'>
+                    <div className='bg-[#223f5c] p-4 rounded-lg'>
+                        <h1 className='text-xl text-white font-bold'>
+                            Got Verified
+                        </h1>
+                        <p className='mt-5 text-gray-200/90'>Overtunes finally got verfied by Discord 🎉</p>
+                        <p className='text-sm mt-3 text-gray-400'>01/12/2021</p>
+                    </div>
+                </div>
+            </section>
 
             <Footer />
         </>
