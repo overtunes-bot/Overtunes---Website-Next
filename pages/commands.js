@@ -11,16 +11,11 @@ import Utils from '../components/commands/utils';
 export default function Commands() {
 
     const [command, setCommand] = useState(<Music />);
-    let selected = 'music';
+    const [selected, setSelected] = useState('music');
 
     function changeCommand(content, id) {
         setCommand(content)
-    }
-
-    function select(id) {
-        document.getElementById(selected).classList.toggle('bg-[#4696e6]')
-        document.getElementById(id).classList.toggle('bg-[#223f5c]')
-        selected = id;
+        setSelected(id)
     }
 
     return (
@@ -38,19 +33,19 @@ export default function Commands() {
             <section className='border-[#3C4652] border-2 p-10  md:px-20 lg:px-32 xl:px-48 flex flex-col md:flex-row'>
                 <div className='border-[#3C4652] border-2 p-2'>
                     <div className='border-[#3C4652] border-2 md:w-56 p-2 flex gap-3 md:flex-col flex-wrap text-gray-200 font-mukta text-[15px] md:text-lg lg:text-xl'>
-                        <button id='music' onClick={(e) => changeCommand(<Music />)} className='border-[#3C4652] flex-grow bg-[#223f5c] border-2 px-3 py-1 rounded-lg'>
+                        <button id='music' onClick={(e) => [changeCommand(<Music />, e.target.id)]} className={`border-[#3C4652] flex-grow ${(selected == 'music') ? 'bg-[#4696e6]' : 'bg-[#223f5c]'}  border-2 px-3 py-1 rounded-lg`}>
                             MUSIC
                         </button>
-                        <button id='filter' onClick={(e) => changeCommand(<Filter />)} className='border-[#3C4652] flex-grow bg-[#223f5c] border-2 px-3 py-1 rounded-lg'>
+                        <button id='filter' onClick={(e) => [changeCommand(<Filter />, e.target.id)]} className={`border-[#3C4652] flex-grow ${(selected == 'filter') ? 'bg-[#4696e6]' : 'bg-[#223f5c]'}  border-2 px-3 py-1 rounded-lg`}>
                             FILTER
                         </button>
-                        <button id='settings' onClick={(e) => changeCommand(<Settings />)} className='border-[#3C4652] flex-grow bg-[#223f5c] border-2 px-3 py-1 rounded-lg'>
+                        <button id='settings' onClick={(e) => [changeCommand(<Settings />, e.target.id)]} className={`border-[#3C4652] flex-grow ${(selected == 'settings') ? 'bg-[#4696e6]' : 'bg-[#223f5c]'}  border-2 px-3 py-1 rounded-lg`}>
                             SETTINGS
                         </button>
-                        <button id='playlist' onClick={(e) => changeCommand(<Playlist />)} className='border-[#3C4652] flex-grow bg-[#223f5c] border-2 px-3 py-1 rounded-lg'>
+                        <button id='playlist' onClick={(e) => [changeCommand(<Playlist />, e.target.id)]} className={`border-[#3C4652] flex-grow ${(selected == 'playlist') ? 'bg-[#4696e6]' : 'bg-[#223f5c]'}  border-2 px-3 py-1 rounded-lg`}>
                             PLAYLIST
                         </button>
-                        <button id='utils' onClick={(e) => changeCommand(<Utils />)} className='border-[#3C4652] flex-grow bg-[#223f5c] border-2 px-3 py-1 rounded-lg'>
+                        <button id='utils' onClick={(e) => [changeCommand(<Utils />, e.target.id)]} className={`border-[#3C4652] flex-grow ${(selected == 'utils') ? 'bg-[#4696e6]' : 'bg-[#223f5c]'}  border-2 px-3 py-1 rounded-lg`}>
                             UTILS
                         </button>
                     </div>
