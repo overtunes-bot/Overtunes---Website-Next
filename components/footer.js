@@ -11,14 +11,14 @@ export default function Footer() {
                 <div className='border-[#3C4652] uppercase border-2 flex gap-3 p-2 grow md:text-xl lg:text-2xl'>
                     <div className='border-[#3C4652] border-2 p-2 md:p-6 md:gap-5 flex flex-col gap-2 grow'>
                         <h3 className='text-gray-200 font-semibold'>Social</h3>
-                        <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className='text-gray-200/70'>Discord</a>
-                        <a href='https://github.com/overtunes-bot' rel='noopener noreferrer' target={'_blank'} className='text-gray-200/70'>Github</a>
+                        <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className='text-gray-200/70 hover:text-gray-200'>Discord</a>
+                        <a href='https://github.com/overtunes-bot' rel='noopener noreferrer' target={'_blank'} className='text-gray-200/70 hover:text-gray-200'>Github</a>
                     </div>
                     <div className='border-[#3C4652] border-2 p-2 md:p-6 md:gap-5 flex flex-col gap-2 grow'>
                         <h3 className='text-gray-200 font-semibold'>Content</h3>
-                        <Link href={'/commands'} passHref><p className='text-gray-200/70'>Commands</p></Link>
-                        <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className='text-gray-200/70'>Support</a>
-                        <Link href={'/blog'} passHref><p className='text-gray-200/70'>Blog</p></Link>
+                        <Link href={'/commands'} passHref><p className='text-gray-200/70 cursor-pointer hover:text-gray-200'>Commands</p></Link>
+                        <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className='text-gray-200/70 hover:text-gray-200'>Support</a>
+                        <Link href={'/blog'} passHref><p className='text-gray-200/70 cursor-pointer hover:text-gray-200'>Blog</p></Link>
                     </div>
                 </div>
             </div>

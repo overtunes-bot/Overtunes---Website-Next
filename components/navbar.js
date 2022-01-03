@@ -24,10 +24,10 @@ export default function Navbar() {
             </div>
             <div id="navbar" className="border-[#3C4652] border-2 md:border-0 mt-10 md:mt-0 p-5 md:p-0 hidden md:block">
                 <div className="flex md:flex-row flex-col gap-4 text-gray-300">
-                    <Link href={'/commands'} passHref><p className="border-2 cursor-pointer border-[#3C4652] md:border-0 p-2 uppercase font-spline">Commands</p></Link>
-                    <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className="border-2 border-[#3C4652] md:border-0 p-2 uppercase font-spline">Support</a>
-                    <Link href={'/blog'} passHref><p className="border-2 cursor-pointer border-[#3C4652] md:border-0 p-2 uppercase font-spline">Blog</p></Link>
-                    <a href='https://discord.com/oauth2/authorize?client_id=873101608467185684&scope=bot&permissions=4332047432&scope=applications.commands%20bot' rel='noopener noreferrer' target={'_blank'}><button className="uppercase bg-[#3C4652] w-full py-2 rounded px-7">Invite</button></a>
+                    <Link href={'/commands'} passHref><p className="border-2 transition duration-300 hover:text-indigo-300 cursor-pointer border-[#3C4652] md:border-0 p-2 uppercase font-spline">Commands</p></Link>
+                    <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className="border-2 transition duration-300 hover:text-indigo-300 border-[#3C4652] md:border-0 p-2 uppercase font-spline">Support</a>
+                    <Link href={'/blog'} passHref><p className="border-2 cursor-pointer transition duration-300 hover:text-indigo-300 border-[#3C4652] md:border-0 p-2 uppercase font-spline">Blog</p></Link>
+                    <a href='https://discord.com/oauth2/authorize?client_id=873101608467185684&scope=bot&permissions=4332047432&scope=applications.commands%20bot' rel='noopener noreferrer' target={'_blank'}><button className="uppercase bg-[#3C4652] transition duration-300 hover:opacity-70 w-full py-2 rounded px-7">Invite</button></a>
                 </div>
             </div>
         </nav>
