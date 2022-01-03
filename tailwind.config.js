@@ -354,6 +354,7 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
+      sansPro: ["'Source Sans Pro', sans-serif"],
       spline: ["'Spline Sans', sans-serif"],
       mukta: ["'Mukta', sans-serif"],
       marryweather: ['"Merriweather Sans", sans-serif'],

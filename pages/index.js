@@ -22,8 +22,8 @@ export default function Home() {
           <h1 className='text-center border-[#3C4652] p-2 border-2 text-gray-200 font-bold text-2xl md:text-3xl'>The Best Music Bot For Discord</h1>
           <p className='text-center border-[#3C4652] p-2 border-2 mt-2 text-gray-300/75 md:text-xl'>Best music bot for Discord. Supports Spotify, Soundcloud, Deezer and more</p>
           <div className='flex-col flex md:flex-row gap-4 mt-3 justify-center'>
-            <button className='bg-[#3C4652] text-gray-200 font-bold w-full md:w-56 lg:w-72 rounded-xl py-2 md:p-4 md:text-2xl'>Invite</button>
-            <button className='border-[#3C4652] text-gray-200 border-2 w-full md:w-56 lg:w-72 rounded-xl py-2 md:p-4 font-bold md:text-2xl'>Support</button>
+            <a href='https://discord.com/oauth2/authorize?client_id=873101608467185684&scope=bot&permissions=4332047432&scope=applications.commands%20bot' rel='noopener noreferrer' target={'_blank'}><button className='bg-[#3C4652] text-gray-200 font-bold w-full md:w-56 lg:w-72 rounded-xl py-2 md:p-4 md:text-2xl'>Invite</button></a>
+            <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'}><button className='border-[#3C4652] text-gray-200 border-2 w-full md:w-56 lg:w-72 rounded-xl py-2 md:p-4 font-bold md:text-2xl'>Support</button></a>
           </div>
         </div>
       </section>

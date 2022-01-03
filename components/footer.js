@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
     return (
         <footer className='border-[#3C4652] border-2 bg-[#04182E]'>
@@ -14,9 +16,9 @@ export default function Footer() {
                     </div>
                     <div className='border-[#3C4652] border-2 p-2 md:p-6 md:gap-5 flex flex-col gap-2 grow'>
                         <h3 className='text-gray-200 font-semibold'>Content</h3>
-                        <a href="/commands" className='text-gray-200/70'>Commands</a>
+                        <Link href={'/commands'} passHref><p className='text-gray-200/70'>Commands</p></Link>
                         <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className='text-gray-200/70'>Support</a>
-                        <a href="/blog" className='text-gray-200/70'>Blog</a>
+                        <Link href={'/blog'} passHref><p className='text-gray-200/70'>Blog</p></Link>
                     </div>
                 </div>
             </div>

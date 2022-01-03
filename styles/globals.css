@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+details > summary {
+    list-style-type: '➡️';
+}
+
+details[open] > summary {
+    list-style-type: '⬇️';
+}
