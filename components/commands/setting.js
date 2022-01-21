@@ -32,6 +32,12 @@ export default function Settings() {
                     </summary>
                     <p className="mt-3">Enable or unable announcement when song playing</p>
                 </details>
+                <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
+                    <summary className="">
+                        -movenode
+                    </summary>
+                    <p className="mt-3">Move current music server to antoher node</p>
+                </details>
             </div>
         </section>
     )
