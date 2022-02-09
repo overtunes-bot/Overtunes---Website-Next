@@ -53,9 +53,9 @@ export default function Commands() {
 
                 <div id='commands' className='mt-5 md:mt-0 w-full border-[#3C4652] border-2 font-sansPro'>
                     <div className='bg-[#172b55] rounded-lg p-3 m-2'>
-                        <h3 className='font-bold text-2xl text-gray-200'>Note:</h3>
-                        <p className='font-lato text-gray-200/80 mt-2'>{'- Never includes < > in your message when using the commands.'}</p>
-                        <p className='font-lato text-gray-200/80'>- If you have changed the prefix, please use your own prefix</p>
+                        <h3 className='font-bold text-2xl text-gray-200'>😱 Slashies</h3>
+                        <p className='font-lato text-gray-200/80 mt-2'>Now Overtunes only using slash Commands</p>
+                        <p className='font-lato text-gray-200/80'>To get started type /help</p>
                     </div>
                     {command}
                 </div>

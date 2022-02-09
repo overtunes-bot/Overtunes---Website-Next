@@ -4,57 +4,57 @@ export default function Filter() {
             <div className="p-2 flex flex-col gap-6 md:text-xl lg:text-2xl">
                 <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
                     <summary className="">
-                        -nightcore
+                        /nightcore
                     </summary>
                 </details>
                 <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
                     <summary className="">
-                        -8D
+                        /8D
                     </summary>
                 </details>
                 <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
                     <summary className="">
-                        -tremolo
+                        /tremolo
                     </summary>
                 </details>
                 <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
                     <summary className="">
-                        -distortion
+                        /distortion
                     </summary>
                 </details>
                 <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
                     <summary className="">
-                        -pop
+                        /pop
                     </summary>
                 </details>
                 <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
                     <summary className="">
-                        -vaporwave
+                        /vaporwave
                     </summary>
                 </details>
                 <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
                     <summary className="">
-                        -trebblebass
+                        /trebblebass
                     </summary>
                 </details>
                 <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
                     <summary className="">
-                        -earrape
+                        /earrape
                     </summary>
                 </details>
                 <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
                     <summary className="">
-                        -karaoke
+                        /karaoke
                     </summary>
                 </details>
                 <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
                     <summary className="">
-                        -soft
+                        /soft
                     </summary>
                 </details>
                 <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
                     <summary className="">
-                        -daycore
+                        /daycore
                     </summary>
                 </details>
             </div>
