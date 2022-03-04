@@ -3,9 +3,23 @@
 @tailwind utilities;
 
 details > summary {
-    list-style-type: '➡️';
+    list-style: none;
+    display: flex;
+    align-items: center;
 }
 
-details[open] > summary {
-    list-style-type: '⬇️';
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+details > summary::before {
+    content: url(/arrow.svg);
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0,3s ease;
+    color: white;
+}
+
+details[open] > summary::before {
+    transform: rotate(90deg);
 }

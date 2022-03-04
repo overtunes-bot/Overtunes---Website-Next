@@ -11,7 +11,7 @@ export default function Document() {
                 <link href="https://fonts.googleapis.com/css2?family=Spline+Sans&display=swap" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
             </Head>
-            <body className='bg-[#162330]'>
+            <body className='bg-[#36393F]'>
                 <Main />
                 <NextScript />
             </body>

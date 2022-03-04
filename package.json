@@ -8,9 +8,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.26.0",
+    "net": "^1.0.2",
     "next": "12.0.7",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "redis": "^4.0.4",
+    "tls": "^0.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",

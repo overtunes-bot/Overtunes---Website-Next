@@ -1,49 +1,31 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+
 export default function Utils() {
+    const { query } = useRouter();
+    const command = [];
+    const [commands, setCommands] = useState();
+
+    async function getCommand() {
+        const data = await axios.get('http://api.overtunes.me:3009/command')
+        data.data.filter(c => c.category === 'util').map(x => {
+            command.push(
+                <details key={x.name} className="bg-[#262b30] cursor-pointer rounded-lg px-3 py-4 text-gray-200" >
+                    <summary className="font-semibold font-mukta">
+                        {(query.prefix ?? "/") + x.name}
+                    </summary>
+                    <p className="mt-3 font-sansPro bg-black px-2 py-1 rounded-md">{x.description}</p>
+                </details>
+            )
+        })
+        setCommands(command)
+    }
+
     return (
-        <section>
-            <div className="p-2 flex flex-col gap-6 md:text-xl lg:text-2xl">
-                <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
-                    <summary className="">
-                        /help
-                    </summary>
-                    <p className="mt-3">Shows all commands at Overtunes</p>
-                </details>
-                <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
-                    <summary className="">
-                        /vote
-                    </summary>
-                    <p className="mt-3">Shows vote links for Overtunes</p>
-                </details>
-                <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
-                    <summary className="">
-                        /support
-                    </summary>
-                    <p className="mt-3">Shows supports link for Overtunes</p>
-                </details>
-                <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
-                    <summary className="">
-                        /invite
-                    </summary>
-                    <p className="mt-3">Shows invite link for Overtunes</p>
-                </details>
-                <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
-                    <summary className="">
-                        /ping
-                    </summary>
-                    <p className="mt-3">Show Overtunes latency</p>
-                </details>
-                <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
-                    <summary className="">
-                        /nodes
-                    </summary>
-                    <p className="mt-3">Shows music server stats for Overtunes</p>
-                </details>
-                <details className="bg-[#172b55] cursor-pointer rounded-lg p-3 text-gray-200">
-                    <summary className="">
-                        /aboutme
-                    </summary>
-                    <p className="mt-3">Shows info about Overtunes</p>
-                </details>
+        <section onLoad={getCommand()}>
+            <div className="p-2 flex flex-col gap-3 md:text-xl lg:text-2xl">
+                {commands}
             </div>
         </section>
     )
