@@ -9,7 +9,7 @@ export default function Music(req, res) {
     const [commands, setCommands] = useState();
 
     async function getCommand() {
-        const data = await axios.get('http://api.overtunes.me:3009/command')
+        const data = await axios.get('https://spooky-death-production.up.railway.app/command')
         data.data.filter(c => c.category === 'music').map(x => {
             command.push(
                 <details key={x.name} className="bg-[#262b30] cursor-pointer rounded-lg px-3 py-4 text-gray-200" >
