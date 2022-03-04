@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Loading from '../loading';
+import commandJson from '/command.json'
 
 export default function Settings() {
     const { query } = useRouter();
@@ -9,8 +10,8 @@ export default function Settings() {
     const [commands, setCommands] = useState(<Loading />);
 
     async function getCommand() {
-        const data = await axios.get('https://spooky-death-production.up.railway.app/command')
-        data.data.filter(c => c.category === 'setting').map(x => {
+        // const data = await axios.get('https://spooky-death-production.up.railway.app/command')
+        commandJson.filter(c => c.category === 'filter').map(x => {
             command.push(
                 <details key={x.name} className="bg-[#262b30] cursor-pointer rounded-lg px-3 py-4 text-gray-200" >
                     <summary className="font-semibold font-mukta">

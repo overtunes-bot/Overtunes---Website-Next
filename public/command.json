@@ -1,0 +1,287 @@
+[
+    {
+        "category": "setting",
+        "name": "movenode",
+        "description": "Move current player to another node"
+    },
+    {
+        "category": "setting",
+        "name": "announce",
+        "description": "Toggle wether Overtunes announce when song starts"
+    },
+    {
+        "category": "setting",
+        "name": "247",
+        "description": "Enabled 247 mode, so the bot will not leave a channel"
+    },
+    {
+        "category": "setting",
+        "name": "defaultvolume",
+        "description": "Change default volume when the bot joins a voice channel"
+    },
+    {
+        "category": "setting",
+        "name": "prefix",
+        "description": ""
+    },
+    {
+        "category": "setting",
+        "name": "djonly",
+        "description": "Toggle Djonly commands mode, so the bot will only allow the DJ to use the commands"
+    },
+    {
+        "category": "music",
+        "name": "pause",
+        "description": "Pause current queue"
+    },
+    {
+        "category": "music",
+        "name": "clear",
+        "description": "Clear current queue"
+    },
+    {
+        "category": "music",
+        "name": "search",
+        "description": "Search for a song"
+    },
+    {
+        "category": "music",
+        "name": "reset",
+        "description": "Reset the queue"
+    },
+    {
+        "category": "music",
+        "name": "join",
+        "description": "Make me join your voice channel"
+    },
+    {
+        "category": "music",
+        "name": "fix",
+        "description": "Change your voice channel server to reduce lag"
+    },
+    {
+        "category": "music",
+        "name": "loop",
+        "description": "Loop current song or queue"
+    },
+    {
+        "category": "music",
+        "name": "disconnect",
+        "description": "Disconnect me from voice channel"
+    },
+    {
+        "category": "music",
+        "name": "remove",
+        "description": "Remove a song from the queue"
+    },
+    {
+        "category": "music",
+        "name": "lyrics",
+        "description": "Get lyrics of a song or current track"
+    },
+    {
+        "category": "music",
+        "name": "nowplaying",
+        "description": "Show the current song"
+    },
+    {
+        "category": "music",
+        "name": "stop",
+        "description": "Stop current queue and remove all song from queue"
+    },
+    {
+        "category": "music",
+        "name": "autoplay",
+        "description": "Toggle autoplay another song if current song is ended"
+    },
+    {
+        "category": "music",
+        "name": "volume",
+        "description": "Change player volume"
+    },
+    {
+        "category": "music",
+        "name": "shuffle",
+        "description": "Shuffle current queue"
+    },
+    {
+        "category": "music",
+        "name": "back",
+        "description": "Back to previous song"
+    },
+    {
+        "category": "music",
+        "name": "resume",
+        "description": "Resume current queue"
+    },
+    {
+        "category": "music",
+        "name": "play",
+        "description": "Play requested song to your voice channel"
+    },
+    {
+        "category": "music",
+        "name": "seek",
+        "description": "Seek to a specific time in the current song"
+    },
+    {
+        "category": "music",
+        "name": "queue",
+        "description": "Show current queue"
+    },
+    {
+        "category": "music",
+        "name": "skip",
+        "description": "Skip current song"
+    },
+    {
+        "category": "music",
+        "name": "jump",
+        "description": "Jump to a specific song number in queue"
+    },
+    {
+        "category": "developer",
+        "name": "eval",
+        "description": "Developer only commands"
+    },
+    {
+        "category": "developer",
+        "name": "execute",
+        "description": "Developer only commands"
+    },
+    {
+        "category": "playlist",
+        "name": "save",
+        "description": "Save current song to your saved playlist"
+    },
+    {
+        "category": "playlist",
+        "name": "view",
+        "description": "View a playlist"
+    },
+    {
+        "category": "playlist",
+        "name": "rename",
+        "description": "Rename a playlist"
+    },
+    {
+        "category": "playlist",
+        "name": "create",
+        "description": "Create a new playlist"
+    },
+    {
+        "category": "playlist",
+        "name": "playlist",
+        "description": "View your saved playlist"
+    },
+    {
+        "category": "playlist",
+        "name": "load",
+        "description": "Load a playlist"
+    },
+    {
+        "category": "playlist",
+        "name": "delete",
+        "description": "Delete a playlist"
+    },
+    {
+        "category": "playlist",
+        "name": "addlist",
+        "description": "Add all song in the queue to requested playlist"
+    },
+    {
+        "category": "util",
+        "name": "shard",
+        "description": "Get info about my shard"
+    },
+    {
+        "category": "util",
+        "name": "invite",
+        "description": "Get invite link for the bot"
+    },
+    {
+        "category": "util",
+        "name": "vote",
+        "description": "Get vote link for the bot"
+    },
+    {
+        "category": "util",
+        "name": "help",
+        "description": "Get full list commands"
+    },
+    {
+        "category": "util",
+        "name": "ping",
+        "description": "Get bot latency"
+    },
+    {
+        "category": "util",
+        "name": "nodes",
+        "description": "View all music nodes"
+    },
+    {
+        "category": "util",
+        "name": "aboutme",
+        "description": "Get info about me and my stats"
+    },
+    {
+        "category": "util",
+        "name": "support",
+        "description": "Get support server for the bot"
+    },
+    {
+        "category": "filter",
+        "name": "daycore",
+        "description": "Toggle daycore mode"
+    },
+    {
+        "category": "filter",
+        "name": "trebblebass",
+        "description": "Toggle trebblebass mode"
+    },
+    {
+        "category": "filter",
+        "name": "tremolo",
+        "description": "Toggle tremolo mode"
+    },
+    {
+        "category": "filter",
+        "name": "soft",
+        "description": "Toggle soft mode"
+    },
+    {
+        "category": "filter",
+        "name": "distortion",
+        "description": "Toggle distortion mode"
+    },
+    {
+        "category": "filter",
+        "name": "karaoke",
+        "description": "Toggle karaoke mode"
+    },
+    {
+        "category": "filter",
+        "name": "8d",
+        "description": "Toggle 8d mode"
+    },
+    {
+        "category": "filter",
+        "name": "vaporwave",
+        "description": "Toggle vaporwave mode"
+    },
+    {
+        "category": "filter",
+        "name": "earrape",
+        "description": "Toggle earrape mode"
+    },
+    {
+        "category": "filter",
+        "name": "nightcore",
+        "description": "Toggle nightcore mode"
+    },
+    {
+        "category": "filter",
+        "name": "pop",
+        "description": "Toggle pop mode"
+    }
+]
