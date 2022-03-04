@@ -15,6 +15,7 @@ export default function Commands() {
     const [selected, setSelected] = useState('music');
 
     function changeCommand(content, id) {
+        if (selected === id) return;
         setCommand(content)
         setSelected(id)
     }

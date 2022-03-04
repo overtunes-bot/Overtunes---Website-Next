@@ -1,11 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Loading from '../loading';
 
 export default function Utils() {
     const { query } = useRouter();
     const command = [];
-    const [commands, setCommands] = useState();
+    const [commands, setCommands] = useState(<Loading />);
 
     async function getCommand() {
         const data = await axios.get('https://spooky-death-production.up.railway.app/command')
@@ -23,7 +24,7 @@ export default function Utils() {
     }
 
     return (
-        <section onLoad={getCommand()}>
+        <section onLoadStart={getCommand()}>
             <div className="p-2 flex flex-col gap-3 md:text-xl lg:text-2xl">
                 {commands}
             </div>
