@@ -4,13 +4,14 @@ import Navbar from '../components/navbar';
 import { useState } from 'react';
 import axios from 'axios';
 import Loading from '../components/loading';
+
 export default function Commands() {
 
     const emojis = ["😗", "😱", "😃", "😯", "🤩"]
     const [command, setCommand] = useState(<Loading />);
     const [selected, setSelected] = useState();
     const [running, setRunning] = useState(false)
-    let listCommand = []
+    const [listCommand, setListCommand] = useState([]);
     let renderList = []
 
     if (!running) {
@@ -21,7 +22,8 @@ export default function Commands() {
     function changeCommand(id) {
         if (selected === id) return;
 
-        if (!listCommand || !listCommand.length) {
+        if (listCommand.length === 0) {
+            console.log('req')
             axios.get('https://spooky-death-production.up.railway.app/command').then(res => {
                 res.data.map(x => {
                     listCommand.push(
