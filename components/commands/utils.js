@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Loading from '../loading';
-import commandJson from '/command.json'
 
 export default function Utils() {
     const { query } = useRouter();
