@@ -4,15 +4,30 @@ import Navbar from '../components/navbar';
 import { useState } from 'react';
 import axios from 'axios';
 import Loading from '../components/loading';
+import commandJson from "../lib/command.json";
+import { useRouter } from 'next/router';
 
 export default function Commands() {
 
+    const { query } = useRouter();
     const emojis = ["😗", "😱", "😃", "😯", "🤩"]
     const [command, setCommand] = useState(<Loading />);
     const [selected, setSelected] = useState();
     const [running, setRunning] = useState(false)
     const [listCommand, setListCommand] = useState([]);
     let renderList = []
+
+
+    function makeJsx(name, description) {
+        return (
+            <details key={name} className="bg-[#262b30] cursor-pointer rounded-lg px-3 py-4 text-gray-200" >
+                <summary className="font-semibold font-mukta">
+                    {(query.prefix ?? "/") + name}
+                </summary>
+                <p className="mt-3 font-sansPro bg-black px-2 py-1 rounded-md">{description}</p>
+            </details>
+        )
+    }
 
     if (!running) {
         changeCommand('music')
@@ -23,7 +38,6 @@ export default function Commands() {
         if (selected === id) return;
 
         if (listCommand.length === 0) {
-            console.log('req')
             axios.get('https://api.overtunes.me/command').then(res => {
                 res.data.map(x => {
                     listCommand.push(
@@ -33,38 +47,30 @@ export default function Commands() {
                             category: x.category
                         }
                     )
-                })
+                }).
 
-                listCommand.filter(c => c.category === id).map(x => {
-                    renderList.push(
-                        <details key={x.name} className="bg-[#262b30] cursor-pointer rounded-lg px-3 py-4 text-gray-200" >
-                            <summary className="font-semibold font-mukta">
-                                {x.name}
-                            </summary>
-                            <p className="mt-3 font-sansPro bg-black px-2 py-1 rounded-md">{x.description}</p>
-                        </details>
-                    )
+                    listCommand.filter(c => c.category === id).map(x => {
+                        renderList.push(makeJsx(x.name, x.description))
+                    })
+                setCommand(renderList)
+                setSelected(id)
+            }).catch(() => {
+                console.log("Failed to request to Api, using old data")
+                commandJson.map(x => {
+                    renderList.push(makeJsx(x.name, x.description))
                 })
-
                 setCommand(renderList)
                 setSelected(id)
             })
         } else {
             listCommand.filter(c => c.category === id).map(x => {
-                renderList.push(
-                    <details key={x.name} className="bg-[#262b30] cursor-pointer rounded-lg px-3 py-4 text-gray-200" >
-                        <summary className="font-semibold font-mukta">
-                            {x.name}
-                        </summary>
-                        <p className="mt-3 font-sansPro bg-black px-2 py-1 rounded-md">{x.description}</p>
-                    </details>
-                )
+                renderList.push(makeJsx(x.name, x.description))
             })
-
             setCommand(renderList)
             setSelected(id)
         }
     }
+
 
     return (
         <>
