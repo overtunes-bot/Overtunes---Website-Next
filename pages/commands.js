@@ -56,7 +56,7 @@ export default function Commands() {
                 setSelected(id)
             }).catch(() => {
                 console.log("Failed to request to Api, using old data")
-                commandJson.map(x => {
+                commandJson.filter(c => c.category === id).map(x => {
                     renderList.push(makeJsx(x.name, x.description))
                 })
                 setCommand(renderList)
