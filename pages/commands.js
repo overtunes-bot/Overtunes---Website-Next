@@ -35,7 +35,6 @@ export default function Commands() {
     }
 
     function changeCommand(id) {
-        if (selected === id) return;
 
         if (listCommand.length === 0) {
             axios.get('https://api.overtunes.me/command').then(res => {
@@ -73,7 +72,7 @@ export default function Commands() {
 
     function search(e) {
         if (e.target.value === "") {
-            changeCommand('music')
+            changeCommand(selected)
             return
         }
         let search = e.target.value.toLowerCase()
