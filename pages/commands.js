@@ -2,22 +2,66 @@ import Head from 'next/head';
 import Footer from '../components/footer';
 import Navbar from '../components/navbar';
 import { useState } from 'react';
-import Music from '../components/commands/music';
-import Filter from '../components/commands/filter';
-import Settings from '../components/commands/setting';
-import Playlist from '../components/commands/Playlist';
-import Utils from '../components/commands/utils';
-
+import axios from 'axios';
+import Loading from '../components/loading';
 export default function Commands() {
 
     const emojis = ["😗", "😱", "😃", "😯", "🤩"]
-    const [command, setCommand] = useState(<Music />);
-    const [selected, setSelected] = useState('music');
+    const [command, setCommand] = useState(<Loading />);
+    const [selected, setSelected] = useState();
+    const [running, setRunning] = useState(false)
+    let listCommand = []
+    let renderList = []
 
-    function changeCommand(content, id) {
+    if (!running) {
+        changeCommand('music')
+        setRunning(true)
+    }
+
+    function changeCommand(id) {
         if (selected === id) return;
-        setCommand(content)
-        setSelected(id)
+
+        if (!listCommand || !listCommand.length) {
+            axios.get('https://spooky-death-production.up.railway.app/command').then(res => {
+                res.data.map(x => {
+                    listCommand.push(
+                        {
+                            name: x.name,
+                            description: x.description,
+                            category: x.category
+                        }
+                    )
+                })
+
+                listCommand.filter(c => c.category === id).map(x => {
+                    renderList.push(
+                        <details key={x.name} className="bg-[#262b30] cursor-pointer rounded-lg px-3 py-4 text-gray-200" >
+                            <summary className="font-semibold font-mukta">
+                                {x.name}
+                            </summary>
+                            <p className="mt-3 font-sansPro bg-black px-2 py-1 rounded-md">{x.description}</p>
+                        </details>
+                    )
+                })
+
+                setCommand(renderList)
+                setSelected(id)
+            })
+        } else {
+            listCommand.filter(c => c.category === id).map(x => {
+                renderList.push(
+                    <details key={x.name} className="bg-[#262b30] cursor-pointer rounded-lg px-3 py-4 text-gray-200" >
+                        <summary className="font-semibold font-mukta">
+                            {x.name}
+                        </summary>
+                        <p className="mt-3 font-sansPro bg-black px-2 py-1 rounded-md">{x.description}</p>
+                    </details>
+                )
+            })
+
+            setCommand(renderList)
+            setSelected(id)
+        }
     }
 
     return (
@@ -40,19 +84,19 @@ export default function Commands() {
                 <div className='flex flex-col md:flex-row'>
                     <div className='px-2 mt-4'>
                         <div className='bg-[#1b1d22] md:w-56 px-3 py-5 rounded-lg flex-grow-0 flex gap-3 md:flex-col flex-wrap text-gray-200 font-mukta text-[15px] md:text-lg lg:text-xl'>
-                            <button id='music' onClick={(e) => [changeCommand(<Music />, e.target.id)]} className={`flex-grow md:flex-grow-0 ${(selected == 'music') ? 'bg-[#4696e6]' : 'bg-[#262b30]'}  px-3 py-1 rounded-md`}>
+                            <button id='music' onClick={(e) => [changeCommand(e.target.id)]} className={`flex-grow md:flex-grow-0 ${(selected == 'music') ? 'bg-[#4696e6]' : 'bg-[#262b30]'}  px-3 py-1 rounded-md`}>
                                 MUSIC
                             </button>
-                            <button id='filter' onClick={(e) => [changeCommand(<Filter />, e.target.id)]} className={`flex-grow md:flex-grow-0 ${(selected == 'filter') ? 'bg-[#4696e6]' : 'bg-[#262b30]'}  px-3 py-1 rounded-md`}>
+                            <button id='filter' onClick={(e) => [changeCommand(e.target.id)]} className={`flex-grow md:flex-grow-0 ${(selected == 'filter') ? 'bg-[#4696e6]' : 'bg-[#262b30]'}  px-3 py-1 rounded-md`}>
                                 FILTER
                             </button>
-                            <button id='settings' onClick={(e) => [changeCommand(<Settings />, e.target.id)]} className={`flex-grow md:flex-grow-0 ${(selected == 'settings') ? 'bg-[#4696e6]' : 'bg-[#262b30]'}  px-3 py-1 rounded-md`}>
+                            <button id='setting' onClick={(e) => [changeCommand(e.target.id)]} className={`flex-grow md:flex-grow-0 ${(selected == 'setting') ? 'bg-[#4696e6]' : 'bg-[#262b30]'}  px-3 py-1 rounded-md`}>
                                 SETTINGS
                             </button>
-                            <button id='playlist' onClick={(e) => [changeCommand(<Playlist />, e.target.id)]} className={`flex-grow md:flex-grow-0 ${(selected == 'playlist') ? 'bg-[#4696e6]' : 'bg-[#262b30]'}  px-3 py-1 rounded-md`}>
+                            <button id='playlist' onClick={(e) => [changeCommand(e.target.id)]} className={`flex-grow md:flex-grow-0 ${(selected == 'playlist') ? 'bg-[#4696e6]' : 'bg-[#262b30]'}  px-3 py-1 rounded-md`}>
                                 PLAYLIST
                             </button>
-                            <button id='utils' onClick={(e) => [changeCommand(<Utils />, e.target.id)]} className={`flex-grow md:flex-grow-0 ${(selected == 'utils') ? 'bg-[#4696e6]' : 'bg-[#262b30]'}  px-3 py-1 rounded-md`}>
+                            <button id='util' onClick={(e) => [changeCommand(e.target.id)]} className={`flex-grow md:flex-grow-0 ${(selected == 'util') ? 'bg-[#4696e6]' : 'bg-[#262b30]'}  px-3 py-1 rounded-md`}>
                                 UTILS
                             </button>
                         </div>
@@ -64,7 +108,9 @@ export default function Commands() {
                             <p className='font-lato text-gray-200 mt-2 ml-1 md:text-lg lg:text-xl'>Now you can interact with Overtunes using <span className='bg-black px-1 rounded'>/</span> as a universal prefix</p>
                             <p className='font-lato text-gray-200 ml-1 md:text-lg lg:text-xl'>To get started type <span className='bg-black px-1 rounded'>/help</span></p>
                         </div>
-                        {command}
+                        <div className='p-2 flex flex-col gap-3 md:text-xl lg:text-2xl'>
+                            {command}
+                        </div>
                     </div>
                 </div>
 
