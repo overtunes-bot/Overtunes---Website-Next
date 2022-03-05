@@ -71,6 +71,21 @@ export default function Commands() {
         }
     }
 
+    function search(e) {
+        if (e.target.value === "") {
+            changeCommand('music')
+            return
+        }
+        let search = e.target.value.toLowerCase()
+        let filtered = []
+        listCommand.map(x => {
+            if (x.name.toLowerCase().includes(search)) {
+                filtered.push(makeJsx(x.name, x.description))
+            }
+        })
+        setCommand(filtered)
+    }
+
 
     return (
         <>
@@ -86,7 +101,7 @@ export default function Commands() {
 
             <section className='p-8 md:px-20 lg:px-32 xl:px-48 flex flex-col'>
                 <div className='px-2 md:px-40 lg:px-60'>
-                    <div className='bg-[#1b1d22] h-10  md:h-12 w-full rounded-md'></div>
+                    <input onInput={search} type={'text'} placeholder={'🔎 Search Command'} className='bg-[#1b1d22] text-gray-200/90 px-4 py-1 focus:outline-none h-10  md:h-12 w-full rounded-md'></input>
                 </div>
 
                 <div className='flex flex-col md:flex-row'>
