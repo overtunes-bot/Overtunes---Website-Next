@@ -24,7 +24,7 @@ export default function Commands() {
 
         if (listCommand.length === 0) {
             console.log('req')
-            axios.get('https://spooky-death-production.up.railway.app/command').then(res => {
+            axios.get('https://api.overtunes.me/command').then(res => {
                 res.data.map(x => {
                     listCommand.push(
                         {
