@@ -11,8 +11,8 @@ export default function Music(req, res) {
     const [commands, setCommands] = useState(<Loading />);
 
     async function getCommand() {
-        // const data = await axios.get('https://spooky-death-production.up.railway.app/command')
-        commandJson.filter(c => c.category === 'filter').map(x => {
+        const data = await axios.get('https://api.overtunes.me/command')
+        data.data.filter(c => c.category === 'filter').map(x => {
             command.push(
                 <details key={x.name} className="bg-[#262b30] cursor-pointer rounded-lg px-3 py-4 text-gray-200" >
                     <summary className="font-semibold font-mukta">
