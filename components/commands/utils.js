@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Loading from '../loading';
+import commandJson from '../../public/command.json';
 
 export default function Utils() {
     const { query } = useRouter();
@@ -9,8 +10,8 @@ export default function Utils() {
     const [commands, setCommands] = useState(<Loading />);
 
     async function getCommand() {
-        const data = await axios.get('https://api.overtunes.me/command')
-        data.data.filter(c => c.category === 'filter').map(x => {
+        // const data = await axios.get('https://spooky-death-production.up.railway.app/command')
+        commandJson.filter(c => c.category === 'filter').map(x => {
             command.push(
                 <details key={x.name} className="bg-[#262b30] cursor-pointer rounded-lg px-3 py-4 text-gray-200" >
                     <summary className="font-semibold font-mukta">
@@ -22,6 +23,7 @@ export default function Utils() {
         })
         setCommands(command)
     }
+
     return (
         <section onLoadStart={getCommand()}>
             <div className="p-2 flex flex-col gap-3 md:text-xl lg:text-2xl">
