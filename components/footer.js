@@ -28,9 +28,14 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-col'>
-                    <p className='text-gray-300 md:text-lg'>© Overtunes {new Date().getFullYear()} - All rights reserved.</p>
-                    <p className='md:text-lg text-gray-300'>Made with 💖 by Vann#3784</p>
+                <div className='flex flex-col md:flex-row md:justify-between md:items-center'>
+                    <div className="flex flex-col">
+                        <p className='text-gray-300 md:text-lg'>© Overtunes {new Date().getFullYear()} - All rights reserved.</p>
+                        <p className='md:text-lg text-gray-300'>Made with 💖 by Vann#3784</p>
+                    </div>
+                    <a href="#top" className='md:text-xl flex items-center animate-bounce flex-row gap-x-4 text-gray-300 mt-7 font-semibold'>Scroll to top<span className="mt-1"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 md:h-8 w-5 md:w-8" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                    </svg></span></a>
                 </div>
             </div>
         </footer>

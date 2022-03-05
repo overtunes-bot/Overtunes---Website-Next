@@ -10,7 +10,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav className="border-2 md:flex justify-between items-center border-[#3C4652] px-8 py-4">
+        <nav id="top" className="border-2 md:flex justify-between items-center border-[#3C4652] px-8 py-4">
             <div className="flex justify-between items-center">
                 <Link href="/" passHref><Image className="cursor-pointer" width={'50px'} height={'50px'} src={'/favicon-32x32.png'} alt="Overtunes logo"></Image></Link>
                 <button onClick={toggleNavbar} className="md:hidden">
