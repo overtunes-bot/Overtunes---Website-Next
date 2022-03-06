@@ -27,7 +27,7 @@ export default function Navbar() {
                     <Link href={'/commands'} passHref><p className="border-2 transition duration-300 hover:text-indigo-300 cursor-pointer border-[#3C4652] md:border-0 p-2 uppercase font-spline">Commands</p></Link>
                     <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className="border-2 transition duration-300 hover:text-indigo-300 border-[#3C4652] md:border-0 p-2 uppercase font-spline">Support</a>
                     <Link href={'/blog'} passHref><p className="border-2 cursor-pointer transition duration-300 hover:text-indigo-300 border-[#3C4652] md:border-0 p-2 uppercase font-spline">Blog</p></Link>
-                    <a href='https://discord.com/oauth2/authorize?client_id=873101608467185684&scope=bot&permissions=4332047432&scope=applications.commands%20bot' rel='noopener noreferrer' target={'_blank'}><button className="uppercase bg-[#3C4652] transition duration-300 hover:opacity-70 w-full py-2 rounded px-7">Invite</button></a>
+                    <a href='https://overtunes.me/invite' rel='noopener noreferrer' target={'_blank'}><button className="uppercase bg-[#3C4652] transition duration-300 hover:opacity-70 w-full py-2 rounded px-7">Invite</button></a>
                 </div>
             </div>
         </nav>
