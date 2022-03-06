@@ -98,6 +98,15 @@ export default function Commands() {
 
             <Navbar />
 
+            <amp-ad width="100vw" height="320"
+                type="adsense"
+                data-ad-client="ca-pub-2622884275844647"
+                data-ad-slot="1878054264"
+                data-auto-format="rspv"
+                data-full-width="">
+                <div overflow=""></div>
+            </amp-ad>
+
             <section className='p-8 md:px-20 lg:px-32 xl:px-48 flex flex-col'>
                 <div className='px-2 md:px-40 lg:px-60'>
                     <input onInput={search} type={'text'} placeholder={'🔎 Search Command'} className='bg-[#1b1d22] text-gray-200/90 px-4 py-1 focus:outline-none h-10  md:h-12 w-full rounded-md'></input>

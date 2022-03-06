@@ -9,6 +9,7 @@ export default function Document() {
                 <script async custom-element="amp-auto-ads"
                     src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
                 </script>
+                <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
                 <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet" />
