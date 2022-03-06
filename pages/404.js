@@ -16,7 +16,7 @@ export default function NotFound() {
 
             <Navbar />
 
-            <section className='text-center p-10 border-[#3C4652] border-2'>
+            <section className='text-center p-10'>
                 <h1 className='text-gray-200/75 text-9xl font-mono'>
                     404
                 </h1>
