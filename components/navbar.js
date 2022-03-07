@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Navbar() {
+    const { data: session } = useSession()
 
     function toggleNavbar() {
         document.getElementById("navbar").classList.toggle("-translate-x-full")
@@ -10,7 +12,7 @@ export default function Navbar() {
     }
 
     return (
-        <nav id="top" className="md:flex justify-between items-center px-8 py-4">
+        <nav id="top" className="md:flex md:mt-5 justify-between items-center px-8 py-4">
             <div className="flex justify-between items-center">
                 <Link href="/" passHref><Image className="cursor-pointer" width={'50px'} height={'50px'} src={'/favicon-32x32.png'} alt="Overtunes logo"></Image></Link>
                 <button onClick={toggleNavbar} className="md:hidden">
@@ -19,17 +21,19 @@ export default function Navbar() {
                     </svg>
                 </button>
             </div>
-            <div className="hidden md:flex flex-row gap-4 text-gray-300">
+            <div className="hidden md:flex items-center flex-row gap-4 text-gray-300">
                 <Link href={'/commands'} passHref><p className="border-2 transition duration-300 hover:text-[#4696e6] cursor-pointer md:border-0 p-2 uppercase font-spline">Commands</p></Link>
                 <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className="border-2 transition duration-300 hover:text-[#4696e6] md:border-0 p-2 uppercase font-spline">Support</a>
                 <Link href={'/blog'} passHref><p className="border-2 cursor-pointer transition duration-300 hover:text-[#4696e6] md:border-0 p-2 uppercase font-spline">Blog</p></Link>
-                <a href='https://overtunes.me/invite' rel='noopener noreferrer' target={'_blank'}><button className="uppercase bg-[#4696e6] font-semibold transition duration-300 hover:opacity-70 w-full py-2 rounded px-7">Invite</button></a>
+                <a href='https://overtunes.me/invite' rel='noopener noreferrer' target={'_blank'} className="transition duration-300 hover:text-[#4696e6] md:border-0 p-2 uppercase font-spline">Invite</a>
+                {session ? <button onClick={signOut} className="flex items-center transition duration-300 hover:opacity-70 gap-2"><img className="w-8 h-8 rounded-full" alt={session.user.name} src={session.user.image} /><p className="font-semibold text-xl">{session.user.name}</p></button> : <button onClick={() => signIn('discord')} className="uppercase bg-[#4696e6] font-semibold transition duration-300 hover:opacity-70 w-full py-2 rounded px-7">Login</button>}
             </div>
             <div id="navbar" className="w-3/4 z-50 px-5 flex flex-col gap-3 py-10 fixed h-full text-gray-200 top-0 left-0 bg-[#36393F] transition ease-in-out transform -translate-x-full">
                 <Link href={'/commands'} passHref><p className="transition duration-300 hover:text-[#4696e6] cursor-pointer md:border-0 p-2 uppercase font-spline">Commands</p></Link>
                 <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className="transition duration-300 hover:text-[#4696e6] md:border-0 p-2 uppercase font-spline">Support</a>
                 <Link href={'/blog'} passHref><p className="cursor-pointer transition duration-300 hover:text-[#4696e6] md:border-0 p-2 uppercase font-spline">Blog</p></Link>
-                <a href='https://overtunes.me/invite' rel='noopener noreferrer' target={'_blank'}><button className="uppercase bg-[#4696e6] font-semibold transition duration-300 hover:opacity-70 w-full py-2 rounded px-7">Invite</button></a>
+                <a href='https://overtunes.me/invite' rel='noopener noreferrer' target={'_blank'} className="transition duration-300 hover:text-[#4696e6] md:border-0 p-2 uppercase font-spline">Invite</a>
+                {session ? <button onClick={signOut} className="flex items-center bg-[#4696e6] transition duration-300 hover:opacity-70 w-full py-2 rounded px-7 gap-2"><img className="w-8 h-8 rounded-full" alt={session.user.name} src={session.user.image} /><p className="font-semibold">{session.user.name}</p></button> : <button onClick={() => signIn('discord')} className="uppercase bg-[#4696e6] font-semibold transition duration-300 hover:opacity-70 w-full py-2 rounded px-7">Login</button>}
             </div>
             <div id="blur" onClick={toggleNavbar} className="w-full hidden fixed h-full top-0 right-0 opacity-0 bg-black/40 transition ease-in-out transform">
 
