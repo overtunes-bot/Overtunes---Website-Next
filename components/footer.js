@@ -12,19 +12,19 @@ export default function Footer() {
                     <div className='uppercase flex flex-col md:flex-row gap-3 md:gap-0 grow md:text-xl lg:text-2xl'>
                         <div className='md:gap-5 flex flex-col gap-2 grow'>
                             <h3 className='text-gray-200 font-bold text-xl'>Social</h3>
-                            <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className='text-gray-200 hover:text-gray-200'>Discord</a>
-                            <a href='https://github.com/overtunes-bot' rel='noopener noreferrer' target={'_blank'} className='text-gray-200 hover:text-gray-200'>Github</a>
+                            <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className='text-gray-200 hover:text-gray-200/50'>Discord</a>
+                            <a href='https://github.com/overtunes-bot' rel='noopener noreferrer' target={'_blank'} className='text-gray-200 hover:text-gray-200/50'>Github</a>
                         </div>
                         <div className='md:gap-5 flex flex-col gap-2 grow'>
                             <h3 className='text-gray-200 font-bold text-xl'>Content</h3>
-                            <Link href={'/commands'} passHref><p className='text-gray-200 cursor-pointer hover:text-gray-200'>Commands</p></Link>
-                            <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className='text-gray-200 hover:text-gray-200'>Support</a>
-                            <Link href={'/blog'} passHref><p className='text-gray-200 cursor-pointer hover:text-gray-200'>Blog</p></Link>
+                            <Link href={'/commands'} passHref><p className='text-gray-200 cursor-pointer hover:text-gray-200/50'>Commands</p></Link>
+                            <a href='https://discord.gg/hM8U8cHtwu' rel='noopener noreferrer' target={'_blank'} className='text-gray-200 hover:text-gray-200/50'>Support</a>
+                            <Link href={'/blog'} passHref><p className='text-gray-200 cursor-pointer hover:text-gray-200/50'>Blog</p></Link>
                         </div>
                         <div className='md:gap-5 flex flex-col gap-2 grow'>
                             <h3 className='text-gray-200 font-bold text-xl'>Legal</h3>
-                            <Link href={'/privacy'} passHref><p className='text-gray-200 cursor-pointer hover:text-gray-200'>Privacy Policy</p></Link>
-                            <Link href={'/tos'} passHref><p className='text-gray-200 cursor-pointer hover:text-gray-200'>Term Of Service</p></Link>
+                            <Link href={'/privacy'} passHref><p className='text-gray-200 cursor-pointer hover:text-gray-200/50'>Privacy Policy</p></Link>
+                            <Link href={'/tos'} passHref><p className='text-gray-200 cursor-pointer hover:text-gray-200/50'>Term Of Service</p></Link>
                         </div>
                     </div>
                 </div>
