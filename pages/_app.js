@@ -3,8 +3,9 @@ import { useEffect } from 'react'
 import Script from 'next/script'
 import { useRouter } from 'next/router'
 import * as gtag from '../lib/gtag'
+import { SessionProvider } from "next-auth/react"
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return <>
     {/* Global Site Tag (gtag.js) - Google Analytics */}
     <Script
@@ -25,7 +26,9 @@ function MyApp({ Component, pageProps }) {
           `,
       }}
     />
-    <Component {...pageProps} />
+    <SessionProvider session={session}>
+      <Component {...pageProps} />
+    </SessionProvider>
   </>
 }
 
