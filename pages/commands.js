@@ -107,6 +107,8 @@ export default function Commands() {
                 <div overflow=""></div>
             </amp-ad>
 
+            <script async="async" data-cfasync="false" src="https://pl17086516.effectivecpmcontent.com/6abd714c9de46feb28a0bd2902ef9caf/invoke.js"></script>
+
             <section className='p-8 md:px-20 lg:px-32 xl:px-48 flex flex-col'>
                 <div className='px-2 md:px-40 lg:px-60'>
                     <input onInput={search} type={'text'} placeholder={'🔎 Search Command'} className='bg-[#1b1d22] text-gray-200/90 px-4 py-1 focus:outline-none h-10  md:h-12 w-full rounded-md'></input>
@@ -130,6 +132,10 @@ export default function Commands() {
                             <button id='util' onClick={(e) => [changeCommand(e.target.id)]} className={`flex-grow md:flex-grow-0 ${(selected == 'util') ? 'bg-[#4696e6]' : 'bg-[#262b30]'}  px-3 py-1 rounded-md`}>
                                 UTILS
                             </button>
+                        </div>
+                        <div className='flex-col mt-5 hidden md:flex'>
+                            <p className='text-center text-gray-200/50'>Advertisement</p>
+                            <div className='w-full h-auto' id="container-6abd714c9de46feb28a0bd2902ef9caf"></div>
                         </div>
                     </div>
 
