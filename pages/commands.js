@@ -107,7 +107,7 @@ export default function Commands() {
                 <div overflow=""></div>
             </amp-ad>
 
-            <script async="async" data-cfasync="false" src="https://pl17086516.effectivecpmcontent.com/6abd714c9de46feb28a0bd2902ef9caf/invoke.js"></script>
+            <script async="async" data-cfasync="false" src="//pl17086516.effectivecpmcontent.com/6abd714c9de46feb28a0bd2902ef9caf/invoke.js"></script>
 
             <section className='p-8 md:px-20 lg:px-32 xl:px-48 flex flex-col'>
                 <div className='px-2 md:px-40 lg:px-60'>
