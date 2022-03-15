@@ -10,6 +10,7 @@ export default function Document() {
                     src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
                 </script>
                 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+                <meta name="propeller" content="90a2f79c4200534fada5e665541e5b15"></meta>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
                 <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet" />
