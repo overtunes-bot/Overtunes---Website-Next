@@ -37,30 +37,30 @@ export default function Commands() {
     function changeCommand(id) {
 
         if (listCommand.length === 0) {
-            axios.get('https://api.overtunes.me/command').then(res => {
-                res.data.map(x => {
-                    listCommand.push(
-                        {
-                            name: x.name,
-                            description: x.description,
-                            category: x.category
-                        }
-                    )
-                }).
+            // axios.get('https://api.overtunes.me/command').then(res => {
+            //     res.data.map(x => {
+            //         listCommand.push(
+            //             {
+            //                 name: x.name,
+            //                 description: x.description,
+            //                 category: x.category
+            //             }
+            //         )
+            //     }).
 
-                    listCommand.filter(c => c.category === id).map(x => {
-                        renderList.push(makeJsx(x.name, x.description))
-                    })
-                setCommand(renderList)
-                setSelected(id)
-            }).catch(() => {
-                console.log("Failed to request to Api, using old data")
-                commandJson.filter(c => c.category === id).map(x => {
-                    renderList.push(makeJsx(x.name, x.description))
-                })
-                setCommand(renderList)
-                setSelected(id)
+            //         listCommand.filter(c => c.category === id).map(x => {
+            //             renderList.push(makeJsx(x.name, x.description))
+            //         })
+            //     setCommand(renderList)
+            //     setSelected(id)
+            // }).catch(() => {
+            //     console.log("Failed to request to Api, using old data")
+            commandJson.filter(c => c.category === id).map(x => {
+                renderList.push(makeJsx(x.name, x.description))
             })
+            setCommand(renderList)
+            setSelected(id)
+            // })
         } else {
             listCommand.filter(c => c.category === id).map(x => {
                 renderList.push(makeJsx(x.name, x.description))
