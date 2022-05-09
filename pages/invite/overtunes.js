@@ -6,7 +6,7 @@ export default function Invite() {
     const query = useRouter();
 
     useEffect(() => {
-        query.push(`https://discord.com/oauth2/authorize?client_id=873101608467185684&scope=bot&permissions=4332047432&scope=applications.commands%20bot`)
+        query.push(`https://discord.com/api/oauth2/authorize?client_id=873101608467185684&permissions=8&scope=bot%20applications.commands`)
     });
 
     return (<>
