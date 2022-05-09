@@ -64,19 +64,19 @@ export default function Home() {
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-wrap -m-4 text-center">
               <div className="p-4 sm:w-1/4 w-1/2 bg-[#262b30]">
-                <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-200">180K+</h2>
+                <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-200">380K+</h2>
                 <p className="leading-relaxed">Users</p>
               </div>
               <div className="p-4 sm:w-1/4 w-1/2 bg-[#262b30]">
-                <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-200">1K+</h2>
+                <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-200">2K+</h2>
                 <p className="leading-relaxed">Servers</p>
               </div>
               <div className="p-4 sm:w-1/4 w-1/2 bg-[#262b30]">
-                <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-200">40+</h2>
+                <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-200">60+</h2>
                 <p className="leading-relaxed">Daily Listeners</p>
               </div>
               <div className="p-4 sm:w-1/4 w-1/2 bg-[#262b30]">
-                <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-200">300+</h2>
+                <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-200">500+</h2>
                 <p className="leading-relaxed">Votes</p>
               </div>
             </div>
